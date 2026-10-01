@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik| Santa Maria Guadalupe Madiun</title>
+    <meta name="description" content="Klinik (Santa Maria Guadalupe) - Klinik Umum & BPJS terpercaya di Madiun dengan pelayanan ramah, Prolanis, dan laboratorium terintegrasi.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0284C7;
+            --primary-dark: #0369A1;
+            --primary-light: #E0F2FE;
+            --accent: #0D9488;
+            --accent-light: #CCFBF1;
+            --text-dark: #0F172A;
+            --text-gray: #64748B;
+            --bg-body: #FFFFFF;
+            --bg-soft: #F8FAFC;
+            --bg-warm: #F0F9FF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px -5px rgba(2, 132, 199, 0.15);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+            --radius-card: 20px;
+            --radius-btn: 50px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.3; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section { padding: 100px 0; }
+
+        /* ================= TOP BAR & HEADER ================= */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .top-bar a { color: white; text-decoration: none; font-weight: 700; margin: 0 8px; }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            background: var(--primary);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text small { font-size: 0.7rem; color: var(--text-gray); font-weight: 500; }
+        
+        nav { display: flex; gap: 32px; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--primary); }
+
+        /* ================= BUTTONS ================= */
+        .btn {
+            padding: 14px 28px;
+            border-radius: var(--radius-btn);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary-light); }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-accent:hover { background: #0F766E; }
+        .btn-white { background: white; color: var(--primary); }
+        .btn-white:hover { background: #F1F5F9; }
+        .btn-large { padding: 18px 36px; font-size: 1.05rem; }
+
+        /* ================= HERO ================= */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 50%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 24px;
+            border: 1px solid var(--primary-light);
+            box-shadow: var(--shadow-sm);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .hero h1 span { color: var(--primary); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .trust-item i { color: var(--primary); font-size: 1.1rem; }
+
+        .hero-visual {
+            position: relative;
+            height: 520px;
+        }
+        .hero-img-main {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-card-1 { top: 40px; left: -30px; animation-delay: 0s; }
+        .float-card-2 { bottom: 60px; right: -30px; animation-delay: 1.5s; }
+        .float-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .float-icon.blue { background: var(--primary-light); color: var(--primary); }
+        .float-icon.green { background: var(--accent-light); color: var(--accent); }
+        .float-text h4 { font-size: 0.85rem; font-weight: 700; }
+        .float-text p { font-size: 0.75rem; color: var(--text-gray); margin: 0; }
+
+        /* ================= STATS ================= */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .stat-item .label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        /* ================= SECTION HEADER ================= */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .section-header h2 span { color: var(--primary); }
+        .section-header p { color: var(--text-gray); font-size: 1.1rem; }
+
+        /* ================= LAYANAN ================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            background: white;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        .service-img {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .service-card:hover .service-img img { transform: scale(1.1); }
+        .service-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 132, 199, 0.3), transparent);
+        }
+        .service-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: white;
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .service-content {
+            padding: 24px;
+        }
+        .service-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .service-content p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .service-tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* ================= WHY US SPLIT ================= */
+        .why-section {
+            background: var(--bg-warm);
+            position: relative;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .why-img {
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 500px;
+        }
+        .why-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .feature-box {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+        .feature-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+        .feature-box h4 { font-size: 1rem; margin-bottom: 8px; font-weight: 700; }
+        .feature-box p { font-size: 0.88rem; color: var(--text-gray); }
+
+        /* ================= BPJS SECTION ================= */
+        .bpjs-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .bpjs-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .bpjs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .bpjs-content h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .bpjs-content p {
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        .bpjs-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        .bpjs-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+        .bpjs-list i {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+        .bpjs-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-card);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-lg);
+        }
+        .bpjs-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .bpjs-steps { display: flex; flex-direction: column; gap: 16px; }
+        .bpjs-step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .bpjs-step-num {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .bpjs-step h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .bpjs-step p { font-size: 0.85rem; color: var(--text-gray); }
+
+        /* ================= PROLANIS SECTION ================= */
+        .prolanis-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+            position: relative;
+        }
+        .prolanis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .prolanis-img {
+            height: 450px;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .prolanis-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .prolanis-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .prolanis-content h2 {
+            font-size: 2.3rem;
+            margin-bottom: 16px;
+        }
+        .prolanis-content h2 span { color: var(--accent); }
+        .prolanis-content > p { color: var(--text-gray); margin-bottom: 28px; }
+        .prolanis-features { display: flex; flex-direction: column; gap: 16px; }
+        .prolanis-feature {
+            background: white;
+            padding: 18px 20px;
+            border-radius: 12px;
+            border: 1px solid #D1FAE5;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .prolanis-feature i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            width: 40px;
+            flex-shrink: 0;
+        }
+        .prolanis-feature h4 { font-size: 0.95rem; margin-bottom: 2px; }
+        .prolanis-feature p { font-size: 0.85rem; color: var(--text-gray); margin: 0; }
+
+        /* ================= JADWAL ================= */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .schedule-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+        .schedule-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+        .schedule-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .schedule-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+        .schedule-card > p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px; }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .schedule-table td {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .schedule-table tr:last-child td { border-bottom: none; }
+        .schedule-table .day { font-weight: 600; color: var(--text-dark); }
+        .schedule-table .time { text-align: right; color: var(--primary); font-weight: 600; }
+        .closed-tag { color: #EF4444; font-weight: 700; }
+
+        /* ================= TESTIMONI ================= */
+        .testimonials-section { background: var(--bg-soft); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testi-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .testi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .testi-stars { color: #FBBF24; margin-bottom: 16px; font-size: 1rem; }
+        .testi-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .testi-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .testi-info h4 { font-size: 0.95rem; margin-bottom: 2px; }
+        .testi-info p { font-size: 0.8rem; color: var(--text-gray); }
+        .google-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #F1F5F9;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .google-badge i { color: #4285F4; }
+
+        /* ================= FAQ ================= */
+        .faq-section { background: white; }
+        .faq-wrapper { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: var(--bg-soft);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+        .faq-item:hover { border-color: var(--primary); }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .faq-question i { transition: transform 0.3s; color: var(--primary); }
+        .faq-question.active i { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-answer p {
+            padding: 0 24px 20px;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* ================= CTA ================= */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cta-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            font-size: 1.15rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #0F172A;
+            color: #CBD5E1;
+            padding: 80px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+        .footer-col h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a {
+            text-decoration: none;
+            color: #94A3B8;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-col a:hover { color: white; }
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid #1E293B;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #1E293B;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .social-links a:hover { background: var(--primary); color: white; }
+
+        /* ================= FLOATING WA ================= */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .float-wa:hover { transform: scale(1.1); }
+
+        .toast {
+            position: fixed;
+            bottom: 110px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #0F172A;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 968px) {
+            .hero-grid, .why-grid, .bpjs-grid, .prolanis-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-header h2 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .features-list { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav { display: none; }
+            .hero-visual { height: 400px; }
+            .why-img, .prolanis-img { height: 350px; }
+            .float-card-1, .float-card-2 { display: none; }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .cta-section h2 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .stat-item .number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            📍 Jl. Cokroaminoto No.131, Madiun | 📞 <a href="tel:+6281230000305">0812-3000-0305</a> | 🏥 Buka Senin - Sabtu
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-hospital-user"></i></div>
+                <div class="logo-text">
+                    Klinik
+                    <small>Santa Maria Guadalupe</small>
+                </div>
+            </a>
+            <nav>
+                <a href="#layanan">Layanan</a>
+                <a href="#keunggulan">Keunggulan</a>
+                <a href="#bpjs">BPJS</a>
+                <a href="#prolanis">Prolanis</a>
+                <a href="#jadwal">Jadwal</a>
+            </nav>
+            <button class="btn btn-primary" onclick="openReservation()">
+                <i class="fas fa-calendar-check"></i> Daftar Berobat
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> Rating 4.2 • 82+ Ulasan Google
+                </div>
+                <h1>Pelayanan Kesehatan <span>Ramah & Terpercaya</span> untuk Keluarga Anda</h1>
+                <p>Klinik Panti Bagija hadir sebagai mitra kesehatan masyarakat Madiun. Kami melayani pemeriksaan umum, BPJS, dan program Prolanis dengan pelayanan yang cepat, ramah, dan transparan.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="openReservation()">
+                        <i class="fas fa-calendar-plus"></i> Daftar Berobat Sekarang
+                    </button>
+                    <a href="https://wa.me/6281230000305" target="_blank" class="btn btn-outline btn-large">
+                        <i class="fab fa-whatsapp"></i> Tanya Admin
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Terakreditasi</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>BPJS Accepted</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-user-md"></i>
+                        <span>Dokter Berpengalaman</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img-main">
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec6961e1?w=800&h=900&fit=crop" alt="Klinik Panti Bagija">
+                </div>
+                <div class="floating-card float-card-1">
+                    <div class="float-icon blue"><i class="fas fa-check"></i></div>
+                    <div class="float-text">
+                        <h4>Pendaftaran Cepat</h4>
+                        <p>Antrean Online & Offline</p>
+                    </div>
+                </div>
+                <div class="floating-card float-card-2">
+                    <div class="float-icon green"><i class="fas fa-heartbeat"></i></div>
+                    <div class="float-text">
+                        <h4>Program Prolanis</h4>
+                        <p>Hipertensi & Diabetes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="number">4.2</div>
+                <div class="label">Rating Google ⭐</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">82+</div>
+                <div class="label">Ulasan Pasien</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">15+</div>
+                <div class="label">Tahun Melayani</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">1000+</div>
+                <div class="label">Pasien Prolanis</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan -->
+    <section class="section" id="layanan">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">LAYANAN KAMI</div>
+                <h2>Solusi Kesehatan <span>Lengkap</span></h2>
+                <p>Kami menyediakan berbagai layanan kesehatan dengan standar medis yang tinggi dan fasilitas modern untuk kenyamanan Anda.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1666214280301-1fa5dfa0e6b9?w=600&h=400&fit=crop" alt="Poli Umum">
+                        <div class="service-img-overlay"></div>
+                        <span class="service-badge">Populer</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Poli Umum</h3>
+                        <p>Pemeriksaan dokter umum untuk berbagai keluhan kesehatan dewasa maupun anak dengan konsultasi yang komprehensif.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Konsultasi</span>
+                            <span class="service-tag">Resep</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="BPJS">
+                        <div class="service-img-overlay"></div>
+                        <span class="service-badge">BPJS</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pasien BPJS</h3>
+                        <p>Menerima rujukan dari Faskes 1 dengan proses pendaftaran cepat dan pelayanan setara pasien umum.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Rujukan Faskes 1</span>
+                            <span class="service-tag">Gratis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1559757175-5700dde674bc?w=600&h=400&fit=crop" alt="Prolanis">
+                        <div class="service-img-overlay"></div>
+                        <span class="service-badge">Spesial</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Program Prolanis</h3>
+                        <p>Pengelolaan terintegrasi untuk pasien hipertensi dan diabetes dengan monitoring berkala dan edukasi.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Hipertensi</span>
+                            <span class="service-tag">Diabetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1579154204601-015839a9a7e9?w=600&h=400&fit=crop" alt="Laboratorium">
+                        <div class="service-img-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Laboratorium</h3>
+                        <p>Pemeriksaan laboratorium lengkap untuk mendukung diagnosis dan monitoring kesehatan Anda.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Cek Darah</span>
+                            <span class="service-tag">Urine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&h=400&fit=crop" alt="Apotek">
+                        <div class="service-img-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Apotek</h3>
+                        <p>Penyediaan obat-obatan berkualitas dengan resep dokter, tersedia untuk kebutuhan pengobatan pasien.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Obat Resep</span>
+                            <span class="service-tag">Generik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1631815589968-1db27f73f886?w=600&h=400&fit=crop" alt="Surat Rujukan">
+                        <div class="service-img-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Surat Rujukan</h3>
+                        <p>Penerbitan surat rujukan ke rumah sakit atau spesialis dengan proses mudah dan tanpa ribet.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Cepat</span>
+                            <span class="service-tag">Hassle-Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section why-section" id="keunggulan">
+        <div class="container why-grid">
+            <div class="why-img">
+                <img src="https://images.unsplash.com/photo-1666214277386-1c5e4f7d1c68?w=800&h=900&fit=crop" alt="Pelayanan Ramah">
+            </div>
+            <div class="why-content">
+                <div class="section-label">MENGAPA MEMILIH KAMI</div>
+                <h2 style="font-size: 2.3rem; margin-bottom: 16px;">Pelayanan Terbaik untuk <span style="color: var(--primary);">Keluarga Anda</span></h2>
+                <p style="color: var(--text-gray); font-size: 1.05rem; margin-bottom: 12px;">
+                    Kami memahami bahwa kesehatan adalah prioritas utama. Oleh karena itu, kami berkomitmen memberikan pelayanan yang tidak hanya medis, tetapi juga penuh empati.
+                </p>
+
+                <div class="features-list">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-user-nurse"></i></div>
+                        <h4>Staff Ramah</h4>
+                        <p>Tim kami siap membantu dengan senyum dan kesabaran</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Pendaftaran Cepat</h4>
+                        <p>Proses registrasi efisien tanpa menunggu lama</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-file-medical"></i></div>
+                        <h4>Penjelasan Jelas</h4>
+                        <p>Dokter menjelaskan diagnosis dan obat dengan detail</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h4>Rujukan Mudah</h4>
+                        <p>Proses rujukan ke RS/specialist tanpa ribet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BPJS Section -->
+    <section class="section bpjs-section" id="bpjs">
+        <div class="container bpjs-grid">
+            <div class="bpjs-content">
+                <div class="section-label" style="color: #93C5FD;">LAYANAN BPJS</div>
+                <h2>Pasien BPJS Disambut dengan Pelayanan Setara</h2>
+                <p>Kami menerima pasien BPJS Kesehatan dengan proses yang transparan dan pelayanan yang tidak berbeda dengan pasien umum.</p>
+                <ul class="bpjs-list">
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Menerima rujukan dari Faskes 1 (Puskesmas/Klinik)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Proses pendaftaran cepat dan terorganisir</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Obat-obatan tersedia sesuai resep dokter</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Dukungan Prolanis dengan cek lab bulanan</span>
+                    </li>
+                </ul>
+                <button class="btn btn-white btn-large" onclick="openReservation()">
+                    <i class="fas fa-calendar-check"></i> Daftar Sebagai Pasien BPJS
+                </button>
+            </div>
+            <div class="bpjs-card">
+                <h3>📋 Alur Pendaftaran BPJS</h3>
+                <div class="bpjs-steps">
+                    <div class="bpjs-step">
+                        <div class="bpjs-step-num">1</div>
+                        <div>
+                            <h4>Siapkan Dokumen</h4>
+                            <p>Siapkan Kartu BPJS aktif, Surat Rujukan Faskes 1, dan KTP/KK.</p>
+                        </div>
+                    </div>
+                    <div class="bpjs-step">
+                        <div class="bpjs-step-num">2</div>
+                        <div>
+                            <h4>Datang ke Loket</h4>
+                            <p>Serahkan dokumen ke petugas untuk verifikasi data.</p>
+                        </div>
+                    </div>
+                    <div class="bpjs-step">
+                        <div class="bpjs-step-num">3</div>
+                        <div>
+                            <h4>Tunggu Panggilan</h4>
+                            <p>Tunggu nomor antrian untuk pemeriksaan oleh dokter.</p>
+                        </div>
+                    </div>
+                    <div class="bpjs-step">
+                        <div class="bpjs-step-num">4</div>
+                        <div>
+                            <h4>Ambil Obat</h4>
+                            <p>Setelah diperiksa, ambil obat di apotek klinik secara gratis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prolanis Section -->
+    <section class="section prolanis-section" id="prolanis">
+        <div class="container prolanis-grid">
+            <div class="prolanis-content">
+                <span class="prolanis-badge">🏥 PROGRAM UNGGULAN</span>
+                <h2>Program <span>Prolanis</span> untuk Hidup Lebih Sehat</h2>
+                <p>Prolanis (Program Pengelolaan Penyakit Kronis) adalah program khusus untuk pasien BPJS dengan penyakit kronis seperti Hipertensi dan Diabetes Melitus. Kami membantu Anda mengelola kesehatan dengan lebih baik.</p>
+
+                <div class="prolanis-features">
+                    <div class="prolanis-feature">
+                        <i class="fas fa-heartbeat"></i>
+                        <div>
+                            <h4>Monitoring Berkala</h4>
+                            <p>Pemeriksaan rutin untuk kontrol tekanan darah dan gula darah</p>
+                        </div>
+                    </div>
+                    <div class="prolanis-feature">
+                        <i class="fas fa-flask"></i>
+                        <div>
+                            <h4>Cek Laboratorium Bulanan</h4>
+                            <p>Pemeriksaan lab rutin untuk memantau kondisi kesehatan Anda</p>
+                        </div>
+                    </div>
+                    <div class="prolanis-feature">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>
+                            <h4>Edukasi Kesehatan</h4>
+                            <p>Konsultasi dan edukasi tentang pola hidup sehat</p>
+                        </div>
+                    </div>
+                    <div class="prolanis-feature">
+                        <i class="fas fa-running"></i>
+                        <div>
+                            <h4>Aktivitas Fisik Bersama</h4>
+                            <p>Program senam dan olahraga untuk peserta Prolanis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prolanis-img">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=700&fit=crop" alt="Program Prolanis">
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal -->
+    <section class="section" id="jadwal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">JAM OPERASIONAL</div>
+                <h2>Jadwal <span>Pelayanan</span> Klinik</h2>
+                <p>Kami siap melayani Anda setiap hari kerja dengan jam operasional yang fleksibel.</p>
+            </div>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <div class="schedule-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Hari Kerja</h3>
+                    <p>Senin hingga Jumat</p>
+                    <table class="schedule-table">
+                        <tr>
+                            <td class="day">Senin - Jumat</td>
+                            <td class="time">08.00 - 20.00</td>
+                        </tr>
+                        <tr>
+                            <td class="day">Pelayanan Prolanis</td>
+                            <td class="time">Sesuai Jadwal</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <h3>Akhir Pekan</h3>
+                    <p>Sabtu dan Hari Libur</p>
+                    <table class="schedule-table">
+                        <tr>
+                            <td class="day">Sabtu</td>
+                            <td class="time">08.00 - 14.00</td>
+                        </tr>
+                        <tr>
+                            <td class="day">Minggu</td>
+                            <td class="closed-tag">Tutup</td>
+                        </tr>
+                        <tr>
+                            <td class="day">Hari Libur Nasional</td>
+                            <td class="closed-tag">Tutup</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Kontak Cepat</h3>
+                    <p>Hubungi kami kapan saja</p>
+                    <table class="schedule-table">
+                        <tr>
+                            <td class="day">Telepon</td>
+                            <td class="time">0812-3000-0305</td>
+                        </tr>
+                        <tr>
+                            <td class="day">WhatsApp</td>
+                            <td class="time">24 Jam</td>
+                        </tr>
+                    </table>
+                    <a href="https://wa.me/6281230000305" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 16px;">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="section testimonials-section" id="testimoni">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">TESTIMONI</div>
+                <h2>Apa Kata <span>Pasien Kami</span></h2>
+                <p>Pengalaman nyata dari para pasien yang telah mempercayakan kesehatannya kepada kami.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testi-card">
+                    <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                    <div class="testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Pelayanannya sangat memuaskan. Dokternya ramah, obat-obatannya jelas, dan rujukan ke RS tidak ribet. Rekomendasi untuk pasien umum maupun BPJS. Program Prolanisnya juga bagus, ada cek lab bulanan."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">IF</div>
+                        <div class="testi-info">
+                            <h4>Infadya Fathoni</h4>
+                            <p>Local Guide • Pasien BPJS & Prolanis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                    <div class="testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Fasilitas kesehatan terbaik dan paling ramah yang pernah saya temui di Madiun. Staff-nya baik-baik banget, kalau ada yang bingung langsung siap ditanya. Pendaftaran cepat, semua ramah."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">AS</div>
+                        <div class="testi-info">
+                            <h4>Arma Sabtya</h4>
+                            <p>Local Guide • Pasien Umum</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                    <div class="testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testi-text">"Pelayanan dokternya sangat teliti dan memberikan penjelasan yang mudah dipahami. Obatnya juga cocok untuk keluhan saya. Tempatnya bersih dan nyaman. Terima kasih Klinik Panti Bagija!"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">RN</div>
+                        <div class="testi-info">
+                            <h4>Rina Nurhasanah</h4>
+                            <p>Pasien Poli Umum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2>Pertanyaan yang <span>Sering Ditanyakan</span></h2>
+                <p>Temukan jawaban untuk pertanyaan umum seputar pelayanan kami.</p>
+            </div>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apakah klinik menerima pasien umum tanpa rujukan?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, kami melayani pasien umum secara langsung tanpa memerlukan surat rujukan. Anda cukup membawa KTP/KK untuk pendaftaran di loket.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apa saja syarat untuk berobat menggunakan BPJS?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda perlu membawa: (1) Kartu BPJS yang masih aktif, (2) Surat Rujukan dari Faskes 1 (Puskesmas/Klinik) yang masih berlaku, dan (3) KTP/KK peserta yang sesuai dengan data BPJS.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apa itu Program Prolanis dan siapa yang bisa ikut?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Prolanis adalah Program Pengelolaan Penyakit Kronis untuk pasien BPJS dengan diagnosis Hipertensi atau Diabetes Melitus. Program ini mencakup pemeriksaan berkala, cek lab bulanan, edukasi, dan aktivitas fisik bersama.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apakah tersedia parkir yang aman?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan area parkir untuk kendaraan roda dua maupun roda empat di sekitar klinik. Parkir diawasi dan mudah diakses dari jalan utama.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Apakah bisa melakukan pendaftaran online?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, Anda bisa melakukan pendaftaran/reservasi melalui tombol "Daftar Berobat" di website ini atau langsung chat admin via WhatsApp. Ini akan mempercepat proses saat Anda datang ke klinik.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Berapa estimasi waktu tunggu untuk pemeriksaan?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Dengan sistem pendaftaran yang terorganisir, rata-rata waktu tunggu 15-30 menit. Kami sarankan melakukan reservasi online untuk mendapatkan antrian yang lebih pasti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container cta-content">
+            <h2>Siap Menjaga Kesehatan Anda?</h2>
+            <p>Daftarkan diri Anda sekarang atau konsultasikan keluhan Anda dengan tim kami. Kami siap melayani dengan sepenuh hati.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-white btn-large" onclick="openReservation()">
+                    <i class="fas fa-calendar-check"></i> Daftar Berobat
+                </button>
+                <a href="https://wa.me/6281230000305" target="_blank" class="btn btn-outline btn-large" style="border-color: white; color: white;">
+                    <i class="fab fa-whatsapp"></i> Chat Admin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>
+                        <i class="fas fa-hospital-user" style="color: var(--primary);"></i>
+                        Klinik Panti Bagija
+                    </h3>
+                    <p>Santa Maria Guadalupe. Fasilitas kesehatan terpercaya di Madiun dengan pelayanan ramah, cepat, dan transparan untuk pasien Umum maupun BPJS.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#layanan">Poli Umum</a></li>
+                        <li><a href="#bpjs">BPJS Kesehatan</a></li>
+                        <li><a href="#prolanis">Program Prolanis</a></li>
+                        <li><a href="#layanan">Laboratorium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="#jadwal">Jadwal Praktek</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><a href="https://maps.app.goo.gl/wLE4vtENDMFGG3kVA" target="_blank"><i class="fas fa-map-marker-alt"></i> Jl. Cokroaminoto No.131, Madiun</a></li>
+                        <li><a href="tel:+6281230000305"><i class="fas fa-phone"></i> 0812-3000-0305</a></li>
+                        <li><a href="https://wa.me/6281230000305"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Klinik Panti Bagija (Santa Maria Guadalupe). All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/6281230000305?text=Halo%20Admin%20Klinik%20Panti%20Bagija,%20saya%20ingin%20bertanya." target="_blank" class="float-wa" title="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i> Alamat berhasil disalin!
+    </div>
+
+    <script>
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                button.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+
+        function openReservation() {
+            const message = "Halo Admin Klinik Panti Bagija, saya ingin mendaftar berobat.\n\nMohon info jadwal yang tersedia. Terima kasih.";
+            const waUrl = `https://wa.me/6281230000305?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
